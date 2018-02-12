@@ -53,6 +53,7 @@ COPY --from=composer /usr/bin/composer /usr/bin/composer
 VOLUME /var/www
 
 # lets try this for windows:
-COPY entrypoint.sh /usr/local/bin/
-ENTRYPOINT ["entrypoint.sh"]
+COPY entrypoint.sh /var/www/
+RUN chmod +x /var/www/entrypoint.sh
+ENTRYPOINT ["/var/www/entrypoint.sh"]
 CMD ["apache2-foreground"]
