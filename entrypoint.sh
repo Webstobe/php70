@@ -34,7 +34,6 @@ if  [ ! -d "/var/www/web/typo3" ];then
 
 fi
 
-WORKDIR /var/www/
 # chown /var/www:
 chown -R www-data:www-data /var/www
 
