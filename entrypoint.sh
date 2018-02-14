@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# change directory:
+cd /var/www
+
 # only if /typo3-folder is not already present:
 if  [ ! -d "/var/www/web/typo3" ];then
     echo -e "==================================="
@@ -31,6 +34,7 @@ if  [ ! -d "/var/www/web/typo3" ];then
 
 fi
 
+WORKDIR /var/www/
 # chown /var/www:
 chown -R www-data:www-data /var/www
 
