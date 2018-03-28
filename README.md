@@ -1,7 +1,5 @@
 # php70
 
-[![](https://dockerbuildbadges.quelltext.eu/status.svg?organization=webstobe&repository=php70)] (https://hub.docker.com/r/webstobe/php70/builds//)  
-
 overview
 ------------
 
@@ -16,3 +14,6 @@ overview
   - rsync
   - graphicsmagick
   - mysql-client
+
+# changelog
+1.9.12  - cleanup & initial copy of test_files if not available  
