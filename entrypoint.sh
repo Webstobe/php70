@@ -38,8 +38,8 @@ if  [ ! -d "/var/www/web/fileadmin/test_files" ];then
     echo -e "============================"
     echo -e "== initializing fileadmin =="
     echo -e "============================"
-    cp /var/www/ingredients/fileadmin/test_files /var/www/web/fileadmin/test_files/
-    cp /var/www/ingredients/fileadmin/logos /var/www/web/fileadmin/logos/
+    cp -r /var/www/ingredients/fileadmin/user_upload/test_files /var/www/web/fileadmin/user_upload/test_files/
+    cp -r /var/www/ingredients/fileadmin/user_upload/logos /var/www/web/fileadmin/user_upload/logos/
 fi
 
 # chown /var/www:
