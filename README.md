@@ -16,4 +16,4 @@ overview
   - mysql-client
 
 # changelog
-1.9.12  - cleanup & initial copy of test_files if not available  
+1.0.0  - cleanup & initial copy of test_files if not available  
