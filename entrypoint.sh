@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# change directory:
+# change directory:
 cd /var/www
 
 # only if /typo3-folder is not already present:
@@ -34,13 +34,12 @@ if  [ ! -d "/var/www/web/typo3" ];then
 
 fi
 
-# only if update-file is present:
-if  [ -e "/var/www/ingredients/mysql/update.sql" ];then
-    echo -e "==================================="
-    echo -e "==       UPDATING DATABASE       =="
-    echo -e "==================================="
-    typo3cms database:import < /var/www/ingredients/mysql/update.sql
-    mv /var/www/ingredients/mysql/update.sql /var/www/ingredients/mysql/update-done.sql
+if  [ ! -d "/var/www/web/fileadmin/test_files" ];then
+    echo -e "============================"
+    echo -e "== initializing fileadmin =="
+    echo -e "============================"
+    cp /var/www/ingredients/fileadmin/test_files /var/www/web/fileadmin/test_files/
+    cp /var/www/ingredients/fileadmin/logos /var/www/web/fileadmin/logos/
 fi
 
 # chown /var/www:
