@@ -15,7 +15,7 @@ if  [ ! -d "/var/www/web/typo3" ];then
     typo3cms install:setup --no-interaction --force --skip-extension-setup=true --database-user-name=dev --database-user-password=dev --database-host-name=mysql --database-port=3306 --database-name=typo3 --admin-user-name='admin' --admin-password='password' --site-name='Docker' --database-create=0 --use-existing-database  --site-setup-type=no
 
     # restore DB:
-    typo3cms database:import < /var/www/ingredients/mysqldump/initialdump.sql
+    typo3cms database:import < /var/www/ingredients/mysql/initialdump.sql
 
     # generate packagestates including core-extensions specified in composer.json:
     typo3cms install:generatepackagestates
@@ -35,12 +35,12 @@ if  [ ! -d "/var/www/web/typo3" ];then
 fi
 
 # only if update-file is present:
-if  [ -f "/var/www/ingredients/mysqldump/update.sql" ];then
+if  [ -e "/var/www/ingredients/mysql/update.sql" ];then
     echo -e "==================================="
     echo -e "==       UPDATING DATABASE       =="
     echo -e "==================================="
-    typo3cms database:import < /var/www/ingredients/mysqldump/update.sql
-    mv /var/www/ingredients/mysqldump/update.sql /var/www/ingredients/mysqldump/update-done.sql
+    typo3cms database:import < /var/www/ingredients/mysql/update.sql
+    mv /var/www/ingredients/mysql/update.sql /var/www/ingredients/mysql/update-done.sql
 fi
 
 # chown /var/www:
