@@ -14,6 +14,3 @@ overview
   - rsync
   - graphicsmagick
   - mysql-client
-
-# changelog
-1.0.0  - cleanup & initial copy of test_files if not available  

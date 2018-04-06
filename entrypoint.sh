@@ -37,7 +37,7 @@ if  [ ! -d "/var/www/web/typo3" ];then
 
 fi
 
-if  [ ! -d "/var/www/web/fileadmin/test_files" ];then
+if  [ ! -d "/var/www/web/fileadmin/user_upload/test_files" ];then
     echo -e "============================"
     echo -e "== initializing fileadmin =="
     echo -e "============================"
