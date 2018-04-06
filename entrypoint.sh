@@ -29,6 +29,9 @@ if  [ ! -d "/var/www/web/typo3" ];then
     # fix folder permissions
     typo3cms install:fixfolderstructure
 
+    # install DE-language
+    typo3cms language:update de
+
     # finally cache:flush
     typo3cms cache:flush
 
