@@ -21,7 +21,8 @@ RUN apt-get update && \
         vim \
         git \
         unzip \
-        zip
+        zip \
+        ssh
 # 07 Install required 3rd party tools
 RUN apt-get install -y \
         libxml2-dev libfreetype6-dev \
