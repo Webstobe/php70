@@ -1,6 +1,6 @@
 FROM composer AS composer
 FROM php:7.0-apache
-# FROM php:7.2-apache
+#FROM php:7.2-apache
 # 02
 MAINTAINER Nando Bosshart <nando@webstobe.ch>
 #03 set ENV variables
@@ -44,7 +44,7 @@ RUN apt-get install -y \
         zlib1g-dev && \
     rm -rf /var/lib/apt/lists/* /usr/src/*
 # 08 configure Apache
-RUN a2enmod rewrite
+RUN a2enmod rewrite ssl proxy proxy_http
 
 # 09 install composer globally - the ENV variables are already set:
 COPY --from=composer /usr/bin/composer /usr/bin/composer
