@@ -8,7 +8,9 @@ if  [ ! -f "/var/www/vendor/composer/installed.json" ];then
     echo -e "==================================="
     echo -e "== PREPARING INITIAL TYPO3-SETUP =="
     echo -e "==================================="
-    # run composer update
+    # composer update to create .lock file:
+    composer update
+    # composer install which triggers TYPO3-Installation:
     composer install
 
       # restore DB:
