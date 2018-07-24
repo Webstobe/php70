@@ -26,5 +26,8 @@ echo -e "==================================="
 echo -e "==      CONTAINER IS READY       =="
 echo -e "==================================="
 
+# show PHP-Version:
+php -v
+
 exec "$@"
 #/bin/bash
