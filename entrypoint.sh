@@ -9,6 +9,9 @@ if  [ ! -f "./web/typo3conf/LocalConfiguration.php" ];
         echo -e "==================================="
         echo -e "== PREPARING INITIAL TYPO3-SETUP =="
         echo -e "==================================="
+        # first refresh the composer.lock file to have a proper install:
+        composer update nothing --no-scripts
+        #now run install-cmd
         composer install;
         # restore DB:
         typo3cms database:import < /var/www/ingredients/mysql/initialdump.sql
